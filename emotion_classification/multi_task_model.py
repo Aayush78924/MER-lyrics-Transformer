@@ -1,25 +1,7 @@
-import logging
-import os
-import sys
-import argparse
-import random
-import logging
-
-import numpy as np
-import tqdm
-import pickle
-import pandas as pd
-
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import fbeta_score, precision_recall_fscore_support, f1_score
-
 import torch
-from torch.utils.data.dataloader import DataLoader
-import torch.nn.functional as F
 import torch.nn as nn
-from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 
-from transformers import XLNetTokenizer, XLNetForSequenceClassification, XLNetModel, AdamW
+from transformers import XLNetForSequenceClassification
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 if torch.cuda.device_count() > 1:
